@@ -8,28 +8,41 @@
     left: 0;
     top: 0;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 
     &__logo{
-        padding: 30px;
+        padding: 50px;
     }
 
     ul {
       list-style-type: none;
-      margin: 0;
-      padding: 0;
       width: 100%;
       @include center-children-flex(column); 
     }
 
     ul li{
       width: 100%;
+      
+
+      .li_content{
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        font-size: 32px;
+
+        p{
+          font-size: 16px;
+        }
+      }
     }
 
     ul li a {
       color: $navbar_hover_dark;
       font-weight: 700;
       text-decoration: none;
-      padding: 10px;
+      height: 60px;
       display: block;
     }
 

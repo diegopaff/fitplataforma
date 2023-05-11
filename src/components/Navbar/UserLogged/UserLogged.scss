@@ -1,0 +1,29 @@
+@import '../../../scss/variables';
+
+.UserLogged{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block: 32px;
+
+    &__picture{
+        border: 6px solid $FITcolor;
+        border-radius: 50%;
+        overflow: hidden;
+
+    }
+
+    &__bienvenido{
+        color: $navbar_text;
+    }
+
+    &__username{
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+
+
+}
