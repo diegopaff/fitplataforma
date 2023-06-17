@@ -1,0 +1,58 @@
+@import '../../scss/variables';
+
+.PartidoCard{
+    height: 350px;
+    width: 300px;
+    background-color: rgb(157, 174, 157);
+    border-radius: 15px;
+    padding: 10px;
+
+    .partido__image{
+        width: 100%;
+        height: 50%;
+        background-color: greenyellow;
+        border-radius: 15px;
+        overflow: hidden;
+
+        img{
+            object-fit: cover;
+            
+        }
+    }
+
+    .partido__info{
+        display: grid;
+        grid-template-columns: 3fr 1fr 3fr;
+        grid-template-rows: .5fr .5fr 1fr 1fr;
+
+        .date{
+            grid-column: 1/4;
+            text-align: end;
+            
+        }
+    }
+        .local{
+            text-align: end;
+        }
+
+        .versus{
+            text-align: center;
+            grid-column: 2/3;
+            grid-row: 2/5;
+        }
+
+        .goles_local{
+            grid-row: 3;
+            grid-column: 1/2;
+            font-size: 30px;
+            text-align: end;
+        }
+
+        .goles_visitante{
+            grid-row: 3;
+            grid-column: 3/4;
+            font-size: 30px;
+            text-align: start;
+        }
+        
+}

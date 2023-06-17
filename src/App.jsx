@@ -10,7 +10,7 @@ import Home from './pages/home/Home'
 import Partidos from './pages/partidos/Partidos'
 import EstadisticasPage from './pages/estadisticas/EstadisticasPage'
 
-const user = false;
+const user = true;
 
 function App() {
 
