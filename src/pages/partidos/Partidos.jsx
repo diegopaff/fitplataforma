@@ -8,36 +8,40 @@ import { useEffect, useState} from 'react';
 const Partidos = () => {
   const [partidos, setPartidos] = useState([]);
   
-  /* useEffect(() => {
-    
-    
+  useEffect(() => {
     (async () => {
       const collectionRef = collection(db, 'BrunoAbbate');
       const snapshots = await getDocs(collectionRef);
-      const docs = snapshots.docs.map(doc => doc.data());
+      const docs = snapshots.docs.map((doc)  => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
       
-      setPartidos(docs)
-    })()
+      setPartidos(docs);
 
+    })();
   }, []);
 
-  console.log(partidos) */
-
-
-
-
-  
-
-
-  
-
-
-  
 
   return (
     <div className='partidos_container'>
       <h1 className='section_title'>Partidos</h1>
-      <PartidoCard/>
+      {partidos.map((part)=> (
+        
+        <PartidoCard
+          key={part.id}
+          id={part.id}
+          imagen={part.imagen}
+          local={part.local}
+          visita={part.visita}
+          golesLocal={part.golesLocal}
+          golesVisita={part.golesVisita}
+          partido={part.partido}
+          acciones={part.acciones}
+        />
+        
+      ))}
+      
     </div>
   )
 }

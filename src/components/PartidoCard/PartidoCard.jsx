@@ -1,22 +1,33 @@
 import './PartidoCard.scss';
-import partidoImage from '../../assets/partido.jpg'
-const PartidoCard = () => {
+import { GiSoccerKick, GiSoccerField, GiPlayButton } from 'react-icons/gi';
+import { Link } from 'react-router-dom';
+
+const PartidoCard = ({imagen, local, visita, acciones, partido, golesLocal, golesVisita, id}) => {
+  
   return (
     <div className='PartidoCard'>
-        <div className='partido partido__image'>
-           <img src={partidoImage}></img>
+        <div className='partido'>
+           <img className='partido__image' src={imagen}></img>  
         </div>
         <div className="partido__info">
           <p className='date'>01/01/2023</p>
-          <p className='local'> $Local </p>
+          <p className='local'>{local}</p>
           <p className='versus'> vs </p>
-          <p className='visitante'> $Visitante </p>
-          <p className='goles_local'> $0 </p>
-          <p className='goles_visitante'> $2 </p>
+          <p className='visitante'> {visita} </p>
+          <p className='goles_local'>{golesLocal} </p>
+          <p className='goles_visitante'> {golesVisita} </p>
           
-         
-          <button> Partido completo </button>
-          <button> Mis acciones </button>
+          <Link className='button' to={`/partidos/${id}`}>
+            <GiSoccerField size='3em'/>
+            <p>Partido Completo</p>
+            <GiPlayButton />
+          </Link>
+          <Link className='button' to={`/acciones/${id}`}>
+            <GiSoccerKick size='2em'/>
+            <p>Acciones</p>
+            <GiPlayButton/>
+          </Link>
+          
         </div>
 
 
