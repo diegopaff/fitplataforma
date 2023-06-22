@@ -18,11 +18,11 @@ const PartidoCard = ({imagen, local, visita, acciones, partido, golesLocal, gole
           <p className='goles_visitante'> {golesVisita} </p>
           
           <Link className='button' to={`/partidos/${id}`}>
-            <GiSoccerField size='3em'/>
-            <p>Partido Completo</p>
+            <GiSoccerField size='2.5em'/>
+            <p>Partido</p>
             <GiPlayButton />
           </Link>
-          <Link className='button' to={`/acciones/${id}`}>
+          <Link className='button acciones' to={`/acciones/${id}`}>
             <GiSoccerKick size='2em'/>
             <p>Acciones</p>
             <GiPlayButton/>
