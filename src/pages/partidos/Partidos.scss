@@ -2,9 +2,15 @@
 
 
 .partidos_container{
+    background-color: $navbar_bg_dark;
     padding: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
 }
 .section_title{
+    grid-column: 1/4;
     font-size: 60px;
-    font-weight: 900;
+    font-weight: 700;
+    color: white;
 }

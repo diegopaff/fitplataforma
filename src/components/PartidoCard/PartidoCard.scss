@@ -3,15 +3,16 @@
 .PartidoCard{
     
     width: 350px;
-    background-color: rgba(1, 190, 219, 0.608);
+    background-color: rgb(10, 10, 10);
     border-radius: 3px;
     padding-inline: 15px;
     padding-block: 22px;
+    color: $navbar_text;
 
     .partido{
         width: 100%;
         height: 50%;
-        background-color: greenyellow;
+        background-color: rgb(129, 129, 129);
         border-radius: 3px;
         overflow: hidden;
         
@@ -30,7 +31,7 @@
             grid-column: 1/4;
             text-align: end;
             margin-top: 12px;
-            color: rgb(42, 42, 42);
+            color: rgb(131, 131, 131);
             
         }
         .local{

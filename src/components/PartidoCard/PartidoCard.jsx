@@ -1,8 +1,9 @@
 import './PartidoCard.scss';
+import PropTypes from 'prop-types';
 import { GiSoccerKick, GiSoccerField, GiPlayButton } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
 
-const PartidoCard = ({imagen, local, visita, acciones, partido, golesLocal, golesVisita, id}) => {
+const PartidoCard = ({imagen, local, visita, golesLocal, golesVisita, id}) => {
   
   return (
     <div className='PartidoCard'>
@@ -30,10 +31,20 @@ const PartidoCard = ({imagen, local, visita, acciones, partido, golesLocal, gole
           
         </div>
 
-
-
     </div>
   )
+};
+
+PartidoCard.propTypes = {
+  imagen: PropTypes.string,
+  local: PropTypes.string,
+  visita: PropTypes.string,
+  acciones: PropTypes.string,
+  partido: PropTypes.string,
+  golesLocal: PropTypes.number,
+  golesVisita: PropTypes.number,
+  id: PropTypes.string
+
 }
 
 export default PartidoCard
