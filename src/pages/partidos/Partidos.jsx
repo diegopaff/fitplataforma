@@ -1,36 +1,50 @@
 import db from '../../../utilities/firebase'
 import PartidoCard from '../../components/PartidoCard/PartidoCard';
 import './Partidos.scss'
-import { collection, getDocs } from "firebase/firestore";
-import { useEffect, useState} from 'react';
+import { collection, getDocs} from "firebase/firestore";
+import { useEffect, useState, useContext} from 'react';
+import { userAuthContext } from '../../context/UserAuthContext';
 
-//console.log('esto es db' ,db);
+
 const Partidos = () => {
-  const [partidos, setPartidos] = useState([]);
+  const [matches, setMatches] = useState([]);
+  const {user} = useContext(userAuthContext); //usuario logueado
+  console.log(user.uid)
   
   useEffect(() => {
     (async () => {
-      const collectionRef = collection(db, 'BrunoAbbate');
+      const collectionRef = collection(db, user.uid, '2023', 'partidos');
+    
       const snapshots = await getDocs(collectionRef);
       const docs = snapshots.docs.map((doc)  => ({
         id: doc.id,
         ...doc.data(),
       }));
       
-      setPartidos(docs);
+      setMatches(docs);
+      
 
     })();
   }, []);
 
 
+console.log(matches)
+
+
+
   return (
     <div className='partidos_container'>
-      <h1 className='section_title'>Partidos</h1>
-      {partidos.map((part)=> (
+      <div className='section_title' >
+        <h1>Partidos</h1>
+      </div>
+      <div className='cards_container'> 
+
+      {matches.map((part)=> (
         
         <PartidoCard
           key={part.id}
           id={part.id}
+          date={part.date}
           imagen={part.imagen}
           local={part.local}
           visita={part.visita}
@@ -40,7 +54,10 @@ const Partidos = () => {
           acciones={part.acciones}
         />
         
-      ))}
+      ) 
+      
+      )}
+      </div>
       
     </div>
   )

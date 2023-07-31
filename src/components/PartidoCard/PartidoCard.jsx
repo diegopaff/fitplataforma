@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { GiSoccerKick, GiSoccerField, GiPlayButton } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
 
-const PartidoCard = ({imagen, local, visita, golesLocal, golesVisita, id}) => {
+const PartidoCard = ({imagen, local, visita, golesLocal, golesVisita, id, date}) => {
   
   return (
     <div className='PartidoCard'>
@@ -11,7 +11,7 @@ const PartidoCard = ({imagen, local, visita, golesLocal, golesVisita, id}) => {
            <img className='partido__image' src={imagen}></img>  
         </div>
         <div className="partido__info">
-          <p className='date'>01/01/2023</p>
+          <p className='date'>{date}</p>
           <p className='local'>{local}</p>
           <p className='versus'> vs </p>
           <p className='visitante'> {visita} </p>

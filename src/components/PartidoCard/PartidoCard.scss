@@ -3,11 +3,22 @@
 .PartidoCard{
     
     width: 350px;
-    background-color: rgb(10, 10, 10);
-    border-radius: 3px;
+    max-height: 400px;
+    background: rgb(2,0,36);
+    background: linear-gradient(-45deg, #181818 0%, #222222 20%, #262626 100%);
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
     padding-inline: 15px;
     padding-block: 22px;
     color: $navbar_text;
+    transition: all 0.3s ease;
+
+
+    &:hover{
+        
+        transform: scale(1.03);
+        background: linear-gradient(-45deg, #222222 0%, #313131 20%, #555555 100%);
+    }
 
     .partido{
         width: 100%;
@@ -80,7 +91,7 @@
             
         }
         .button:hover{
-            background-color: rgba(1, 83, 96, 0.759);
+            background-color: rgba(207, 207, 207, 0.759);
             color: black;
         }
 

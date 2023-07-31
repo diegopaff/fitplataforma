@@ -1,4 +1,5 @@
 import './App.scss'
+import { useContext } from 'react'
 import Navbar from './components/Navbar/Navbar'
 import Charlas from './pages/charlas/charlas'
 
@@ -10,17 +11,22 @@ import Home from './pages/home/Home'
 import Partidos from './pages/partidos/Partidos'
 import EstadisticasPage from './pages/estadisticas/EstadisticasPage'
 import VideoPlay from './components/VideoPlay/VideoPlay'
+import { userAuthContext } from './context/UserAuthContext'
 
-const user = true;
+
+
 
 function App() {
+
+  const {user} = useContext(userAuthContext);
+  
 
   return (
 
     
     <div className='App-Container'>
       {!user && <Login />}
-
+      
       {user &&  
         <header>
           <Navbar />  
@@ -28,16 +34,16 @@ function App() {
       }
       {user &&
         <main>
-          <Routes>
-            <Route exact path='/' element={<Home />} />
-            <Route exact path='/charlas' element={<Charlas/>} />
-            <Route exact path='/charlas/:charlaID' element={<Charlas/>} />
-            <Route exact path='/partidos' element={<Partidos />} />
-            <Route exact path='/estadisticas' element={<EstadisticasPage />} />
-            <Route exact path='/prensa' element={<Prensa />} />
-            <Route exact path='/partidos/:partidoID' element={<VideoPlay tipo='partido'/>} /><Route exact path='/partidos/:partidoID' element={<VideoPlay tipo='partido'/>} /> 
-            <Route exact path='/acciones/:partidoID' element={<VideoPlay tipo='acciones'/>} /> 
-          </Routes> 
+            <Routes>
+              <Route exact path='/' element={<Home />} />
+              <Route exact path='/charlas' element={<Charlas/>} />
+              <Route exact path='/charlas/:charlaID' element={<Charlas/>} />
+              <Route exact path='/partidos' element={<Partidos />} />
+              <Route exact path='/estadisticas' element={<EstadisticasPage />} />
+              <Route exact path='/prensa' element={<Prensa />} />
+              <Route exact path='/partidos/:partidoID' element={<VideoPlay tipo='partido'/>} />
+              <Route exact path='/acciones/:partidoID' element={<VideoPlay tipo='acciones'/>} /> 
+            </Routes>
         </main>
       }
       {user && 
