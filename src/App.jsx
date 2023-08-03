@@ -2,9 +2,8 @@ import './App.scss'
 import { useContext } from 'react'
 import Navbar from './components/Navbar/Navbar'
 import Charlas from './pages/charlas/charlas'
-
-import { Route, Routes } from 'react-router-dom'
 import Footer from './components/Footer/Footer'
+import { Route, Routes } from 'react-router-dom'
 import Login from './pages/login/Login'
 import Prensa from './pages/prensa/Prensa'
 import Home from './pages/home/Home'
@@ -51,6 +50,7 @@ function App() {
           <Footer />
         </footer>
       }
+   
     </div>
   )
 }

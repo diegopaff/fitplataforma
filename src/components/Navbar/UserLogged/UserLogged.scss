@@ -1,26 +1,23 @@
 @import '../../../scss/variables';
 
 .UserLogged{
-    color: white;
+    color: $navbar_text;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-block: 32px;
+    
 
     &__picture{
-        border: 6px solid $FITcolor;
+        border: 3px solid $FITcolor;
         border-radius: 50%;
         overflow: hidden;
+        width: 80px;
 
-    }
-
-    &__bienvenido{
-        color: $navbar_text;
     }
 
     &__username{
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 600;
     }
 

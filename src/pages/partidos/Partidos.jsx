@@ -9,7 +9,7 @@ import { userAuthContext } from '../../context/UserAuthContext';
 const Partidos = () => {
   const [matches, setMatches] = useState([]);
   const {user} = useContext(userAuthContext); //usuario logueado
-  console.log(user.uid)
+  //console.log(user.uid)
   
   useEffect(() => {
     (async () => {
@@ -28,7 +28,7 @@ const Partidos = () => {
   }, []);
 
 
-console.log(matches)
+//console.log(matches)
 
 
 

@@ -2,11 +2,11 @@
 
 
 .partidos_container{
-    background-color: $navbar_bg_dark;
-    padding: 32px;
+    background-color: $pages_bg_light;
     padding-top: 60px;
     display: flex;
     flex-direction: column;
+    
 
     .cards_container{
         display: flex;
@@ -22,4 +22,6 @@
     font-weight: 700;
     color: white;
 }
+
+
 

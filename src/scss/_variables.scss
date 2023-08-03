@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 // Colors
-$navbar_bg_dark: #181818;
-$navbar_hover_dark: #5D5D5D;
-$navbar_text: #8C8C8C;
+$navbar_bg_dark: #252422;
+$pages_bg_light: #FBFAF8;
+$navbar_hover_dark: #434343;
+$navbar_text: #FBFAF8;
 $FITcolor: #00B3E5;
 
 
@@ -15,4 +16,9 @@ $FITcolor: #00B3E5;
     flex-direction: $direction;
     align-items: center;
     justify-content: center;
+}
+
+@mixin center-single-grid(){
+    display: grid;
+    place-items: center;
 }
