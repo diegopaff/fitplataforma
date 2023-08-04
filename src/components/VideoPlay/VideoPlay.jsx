@@ -4,7 +4,7 @@ import db from '../../../utilities/firebase'
 import {useEffect , useState, useContext}  from 'react';
 import { doc, getDoc } from 'firebase/firestore';
 
-import {Link, useParams} from 'react-router-dom';
+import {NavLink, useParams} from 'react-router-dom';
 import { userAuthContext } from '../../context/UserAuthContext';
 
 const VideoPlay = ({tipo}) => {
@@ -35,7 +35,7 @@ const VideoPlay = ({tipo}) => {
 
         <p className='VideoPlay__title'> {partido.local}  {partido.golesLocal}  vs  {partido.golesVisita}  {partido.visita}</p>
         <p className='VideoPlay__title'> {partido.minutosJugados} minutos jugados.</p>
-        <Link to="/partidos"> <button> Volver</button></Link>
+        <NavLink to="/partidos"> <button> Volver</button></NavLink>
     </div>
   )
 };

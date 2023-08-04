@@ -1,7 +1,12 @@
 .App-Container{
     background-color: #f3f4f6;
- 
+    display: flex;
 
+ 
+    .header{
+        display: flex;
+        flex-direction: column;
+    }
 
     main{
         background-color: green;

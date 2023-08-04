@@ -2,7 +2,7 @@ import './App.scss'
 import { useContext } from 'react'
 import Navbar from './components/Navbar/Navbar'
 import Charlas from './pages/charlas/charlas'
-import Footer from './components/Footer/Footer'
+/* import Footer from './components/Footer/Footer' */
 import { Route, Routes } from 'react-router-dom'
 import Login from './pages/login/Login'
 import Prensa from './pages/prensa/Prensa'
@@ -45,11 +45,11 @@ function App() {
             </Routes>
         </main>
       }
-      {user && 
+   {/*    {user && 
         <footer>
           <Footer />
         </footer>
-      }
+      } */}
    
     </div>
   )

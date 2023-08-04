@@ -3,16 +3,28 @@
 
 .partidos_container{
     background-color: $pages_bg_light;
-    padding-top: 60px;
+    
+    background-color: $navbar_bg_dark;
+    border: 3px red solid;
     display: flex;
     flex-direction: column;
-    
+    width: calc(100vw);
+    padding-left: 95px;
+    padding-top: 30px;
+    transition: .4s ease;
+    height: 99vh;
 
     .cards_container{
+        background-color: $pages_bg_light;
+        height: 95%;
+        width: 90%;
+        border-radius: 40px;
         display: flex;
         gap: 1rem;
         flex-wrap: wrap;
-        min-height: 100vh;
+        padding-left: 45px;
+        opacity: scroll;
+
     }
     
     
@@ -23,5 +35,9 @@
     color: white;
 }
 
-
+.partidos_container.active{
+    width: calc(100vw); 
+    padding-left: 350px;
+    transition: 0.4s ease;
+}
 

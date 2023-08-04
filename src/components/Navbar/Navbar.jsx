@@ -1,70 +1,74 @@
 import './Navbar.scss';
-import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { MdOutlineVideoLibrary, MdOutlineEditNote, MdLogout, MdHomeFilled, MdMenu, MdMenuOpen} from 'react-icons/md';
+import { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
+import { MdOutlineVideoLibrary,  MdLogout, MdHomeFilled, MdMenu, MdMenuOpen} from 'react-icons/md';
 import { TbSoccerField } from 'react-icons/tb';
 //import { GoGraph } from 'react-icons/go';
-import Logo from '../../assets/logoFit.png'
 import UserLogged from './UserLogged/UserLogged';
 import { userAuthContext } from '../../context/UserAuthContext';
+import { NavbarStateContext } from '../../context/NavbarStateContext';
 
 
 
 const Navbar = () => {
-  const [active, setActive] = useState(true);
+
   const {logOut} = useContext(userAuthContext);
+  const {toggleActive, active } = useContext(NavbarStateContext)
+  /* const [active, setActive] = useState(true);
+  const toggleActive = () => setActive(!active); */
 
   return (
 
     <nav className={`${active ? 'active' : ' '} sidebar`}>
-      <div className='toggleButton' onClick={() => setActive(!active)}>
+      <div className='toggleButton' onClick={toggleActive}>
         {active ? <MdMenuOpen/> : <MdMenu/>}
       </div>
       
-      <Link to="/">   
+      {/* <NavLink to="/">   
         <img src={Logo} className="sidebar__logo" alt='FIT logo'></img>
-      </Link>
+      </NavLink> */}
       
       <UserLogged />
 
-      <ul>
+      <ul className='nav'>
         <li>
-          <Link className='li_content' to="/">
+          <NavLink className='li_content' to="/">
             <MdHomeFilled /> 
-            <p>Inicio</p>
-          </Link>
+            <p style={{display: active ? 'block' : 'hidden'}}>Inicio</p>
+            
+          </NavLink>
         </li>
         <li>
-          <Link className='li_content' to="/charlas">
+          <NavLink className='li_content' to="/charlas">
             <MdOutlineVideoLibrary /> 
             <p>Charlas Tácticas</p>
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/partidos" className='li_content' >
+          <NavLink to="/partidos" className='li_content' >
             <TbSoccerField/>
             <p>Partidos</p>
-          </Link>
+          </NavLink>
         </li>
         <li>
           
         </li>
        {/*  <li>
-          <Link to="/estadisticas" className='li_content' >
+          <NavLink to="/estadisticas" className='li_content' >
             <GoGraph />
             <p>Estadísticas</p>  
-          </Link>
+          </NavLink>
         </li> */}
         {/* <li>
-          <Link to="/prensa" className='li_content'>
+          <NavLink to="/prensa" className='li_content'>
             <MdOutlineEditNote />
             <p>Prensa</p>
-          </Link>
+          </NavLink>
         </li> */}
       </ul>
       
-      <div onClick={logOut} className='li_content' >
-            <MdLogout/>
+      <div onClick={logOut} className='logOut' >
+            <MdLogout />
             <p>LogOut</p>
       </div>
     </nav>

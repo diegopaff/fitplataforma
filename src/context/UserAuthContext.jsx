@@ -3,11 +3,12 @@ import { signInWithEmailAndPassword , onAuthStateChanged , signOut} from "fireba
 import { auth } from '../../utilities/firebase';
 
 
+
 export const userAuthContext = createContext();
 
 export const UserAuthContextProvider = ({ children }) => {
     const[user, setUser] = useState({});
-   
+    
 
     const logIn = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password);
@@ -15,8 +16,9 @@ export const UserAuthContextProvider = ({ children }) => {
 
     const logOut = () => {
         signOut(auth);
-        console.log(auth);
+        
     }
+
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -26,6 +28,8 @@ export const UserAuthContextProvider = ({ children }) => {
         return () => {
             unsubscribe(); //clean up when the component is dismounted
         }
+        
+
     },[]);
 
 
@@ -34,7 +38,7 @@ export const UserAuthContextProvider = ({ children }) => {
         value={{
             logIn, 
             user, 
-            logOut
+            logOut,
             }}>
             {children}
         </userAuthContext.Provider>

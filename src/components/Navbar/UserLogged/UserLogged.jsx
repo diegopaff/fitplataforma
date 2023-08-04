@@ -1,10 +1,13 @@
 import './UserLogged.scss'
-import { getAuth, } from "firebase/auth";
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
+import { userAuthContext } from '../../../context/UserAuthContext';
+
 
 const UserLogged = () => {
 
-  const [userInfo, setUserInfo] = useState({});
+  const { user } = useContext(userAuthContext);
+  console.log(user.photoURL)
+/*   const [userInfo, setUserInfo] = useState({});
   useEffect(()=> {
     const auth = getAuth();
     const user = auth.currentUser;
@@ -19,17 +22,17 @@ const UserLogged = () => {
       });
     }
 
-  },[]);
+  },[]); */
 
   
   
   return (
     <div className="UserLogged">
       <div className='UserLogged__picture'>
-        <img src={userInfo.photoURL}></img>
+        <img src={user.photoURL}></img>
       </div>
     
-      <p className='UserLogged__username'>{userInfo.nombre}</p>
+      <p className='UserLogged__username'>{user.displayName}</p>
     </div>
   )
 }
