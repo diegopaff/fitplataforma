@@ -11,7 +11,7 @@ const Partidos = () => {
   const [matches, setMatches] = useState([]);
   const {user} = useContext(userAuthContext); //usuario logueado
   const {active} = useContext(NavbarStateContext); //Navbar abierta o cerrada
-  //console.log(user.uid)
+
   
   useEffect(() => {
     (async () => {
@@ -28,10 +28,6 @@ const Partidos = () => {
 
     })();
   }, []);
-
-
-//console.log(matches)
-
 
 
   return (

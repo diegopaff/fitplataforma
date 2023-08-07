@@ -1,0 +1,25 @@
+.icon-container{
+    position: relative;
+    .icon__value{
+        background-color: #00bfffa1;
+        height: 50px;
+        width: 50px;
+        display: grid;
+        place-items: center;
+        padding: 12px 12px ;
+        border-radius: 30px;
+        position: relative;
+        font-weight: 700;
+    }
+    
+    .icon__tipo{
+        position: absolute;
+        background-color: rgb(54, 54, 54);
+        border-radius: 15px;
+        padding: 3px 5px;
+        left: 30px;
+        top: -10px;
+        font-size: 12px;
+        font-weight: 400;
+    }
+}

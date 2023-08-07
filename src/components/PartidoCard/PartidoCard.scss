@@ -12,55 +12,15 @@
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
-    background-size: cover;
-    transition: 0.4s all ease;
+    background-size: auto 100%;
+    transition: 0.6s all ease;
+    background-position: center;
 
     &:hover{
-        transform: scale(1.02);
+        background-size: auto 107%;
         cursor: pointer;
     }
 
-
-    
-
-    .partido{
-        width: 100%;
-        height: 100%;
-        background-color: rgb(129, 129, 129);
-        border-radius: 3px;
-        overflow: hidden;
-        position: relative;
-        
-        
-        
-        .partido__image{
-            height: 100%;
-            object-fit: cover;
-            transition: all 0.5s ease-out;
-            z-index: 0;
-            position: absolute;
-            left: 0;
-            top: 0;
-            &:hover{
-                transform: scale(1.1);  
-            }
-        }
-        
-    }
-
-    .overlay{
-        background-color: rgba(0, 0, 0, 0.37);
-        opacity: 50%;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        z-index: 1;
-        transition: 0.4s all ease;
-
-        &:hover{
-            opacity: 0;
-        }
-    }
 
     .partido__info{
         
@@ -73,7 +33,11 @@
         align-items: center;
         z-index: 3;
         background-color: rgba(0, 0, 0, 0.382);
-        background-blend-mode: luminosity;
+        transition: all .4s ease;
+        &:hover{
+        background-color: rgba(0, 0, 0, 0.1);
+        
+        }
 
         &-resultado{
             
@@ -105,6 +69,21 @@
             font-size: 12px;
             font-weight: 400;
             
+        }
+        .button_container{
+            display: flex;
+            .button{
+                background-color: $FITcolor;
+                color:$pages_bg_light;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                padding-inline: 15px;
+                padding-block: 10px;
+                border-radius: 30px;
+    
+            }
         }
 
 
