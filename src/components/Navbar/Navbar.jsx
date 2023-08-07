@@ -32,21 +32,21 @@ const Navbar = () => {
 
       <ul className='nav'>
         <li>
-          <NavLink className='li_content' to="/">
-            <MdHomeFilled /> 
-            <p style={{display: active ? 'block' : 'hidden'}}>Inicio</p>
+          <NavLink className={`li_content ${active ? 'open' : ' '}`} to="/">
+            <MdHomeFilled className='logo'/> 
+            <p >Inicio</p>
             
           </NavLink>
         </li>
         <li>
-          <NavLink className='li_content' to="/charlas">
-            <MdOutlineVideoLibrary /> 
+          <NavLink className={`li_content ${active ? 'open' : ' '}`} to="/charlas">
+            <MdOutlineVideoLibrary className='logo'/> 
             <p>Charlas Tácticas</p>
           </NavLink>
         </li>
         <li>
-          <NavLink to="/partidos" className='li_content' >
-            <TbSoccerField/>
+          <NavLink to="/partidos" className={`li_content ${active ? 'open' : ' '}`} >
+            <TbSoccerField className='logo'/>
             <p>Partidos</p>
           </NavLink>
         </li>

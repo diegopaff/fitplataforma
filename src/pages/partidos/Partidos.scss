@@ -2,10 +2,9 @@
 
 
 .partidos_container{
-    background-color: $pages_bg_light;
     
     background-color: $navbar_bg_dark;
-    border: 3px red solid;
+    
     display: flex;
     flex-direction: column;
     width: calc(100vw);
@@ -14,16 +13,31 @@
     transition: .4s ease;
     height: 99vh;
 
-    .cards_container{
+    .section_title h1{
+        font-size: 35px;
+        font-weight: 700;
+        color: white;
+        
+    }
+
+    .page_container{
         background-color: $pages_bg_light;
         height: 95%;
         width: 90%;
         border-radius: 40px;
         display: flex;
+        flex-direction: column;
         gap: 1rem;
-        flex-wrap: wrap;
         padding-left: 45px;
-        opacity: scroll;
+        overflow-y: scroll;
+       
+
+        .cards_container{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
 
     }
     
@@ -37,7 +51,7 @@
 
 .partidos_container.active{
     width: calc(100vw); 
-    padding-left: 350px;
+    padding-left: 248px;
     transition: 0.4s ease;
 }
 

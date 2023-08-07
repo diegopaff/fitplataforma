@@ -37,28 +37,32 @@ const Partidos = () => {
   return (
     <div className={`partidos_container ${active ? 'active' : ' '}`}>
       
-      <div className='cards_container'> 
+      <div className='page_container'> 
         <div className='section_title' >
           <h1>Partidos</h1>
         </div>
-      {matches.map((part)=> (
-        
-        <PartidoCard
-          key={part.id}
-          id={part.id}
-          date={part.date}
-          imagen={part.imagen}
-          local={part.local}
-          visita={part.visita}
-          golesLocal={part.golesLocal}
-          golesVisita={part.golesVisita}
-          partido={part.partido}
-          acciones={part.acciones}
-        />
-        
-      ) 
-      
-      )}
+        <div className='cards_container'>
+
+          {matches.map((part)=> (
+            
+            <PartidoCard
+              key={part.id}
+              id={part.id}
+              date={part.date}
+              imagen={part.imagen}
+              local={part.local}
+              visita={part.visita}
+              golesLocal={part.golesLocal}
+              golesVisita={part.golesVisita}
+              partido={part.partido}
+              acciones={part.acciones}
+              minutosJugados={part.minutosJugados}
+              golesJugador={part.golesJugador}
+              asistenciasJugador={part.asistenciasJugador}
+            />
+            
+          ))}
+        </div>
       </div>
       
     </div>

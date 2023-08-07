@@ -1,12 +1,12 @@
 import './UserLogged.scss'
 import { useContext } from 'react';
 import { userAuthContext } from '../../../context/UserAuthContext';
-
+import { NavbarStateContext } from '../../../context/NavbarStateContext';
 
 const UserLogged = () => {
 
   const { user } = useContext(userAuthContext);
-  console.log(user.photoURL)
+  const { active } = useContext(NavbarStateContext)
 /*   const [userInfo, setUserInfo] = useState({});
   useEffect(()=> {
     const auth = getAuth();
@@ -27,7 +27,7 @@ const UserLogged = () => {
   
   
   return (
-    <div className="UserLogged">
+    <div className='  '>
       <div className='UserLogged__picture'>
         <img src={user.photoURL}></img>
       </div>

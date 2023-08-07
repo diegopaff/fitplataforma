@@ -3,101 +3,112 @@
 .PartidoCard{
     
     width: 350px;
-    max-height: 400px;
+    height: 258px;
     background: rgb(2,0,36);
     background: linear-gradient(-45deg, #181818 0%, #222222 20%, #262626 100%);
-    border-radius: 6px;
+    border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-    padding-inline: 15px;
-    padding-block: 22px;
     color: $navbar_text;
-    transition: all 0.3s ease;
-
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    transition: 0.4s all ease;
 
     &:hover{
-        
-        transform: scale(1.03);
-        background: linear-gradient(-45deg, #222222 0%, #313131 20%, #555555 100%);
+        transform: scale(1.02);
+        cursor: pointer;
     }
+
+
+    
 
     .partido{
         width: 100%;
-        height: 50%;
+        height: 100%;
         background-color: rgb(129, 129, 129);
         border-radius: 3px;
         overflow: hidden;
+        position: relative;
+        
+        
         
         .partido__image{
             height: 100%;
-            object-fit: cover;  
+            object-fit: cover;
+            transition: all 0.5s ease-out;
+            z-index: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+            &:hover{
+                transform: scale(1.1);  
+            }
+        }
+        
+    }
+
+    .overlay{
+        background-color: rgba(0, 0, 0, 0.37);
+        opacity: 50%;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        transition: 0.4s all ease;
+
+        &:hover{
+            opacity: 0;
         }
     }
 
     .partido__info{
-        display: grid;
-        grid-template-columns: 3fr 1fr 3fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr ;
+        
+        height: 100%;
+        font-size: 18px;
+        font-weight: 400;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 3;
+        background-color: rgba(0, 0, 0, 0.382);
+        background-blend-mode: luminosity;
 
-        .date{
-            grid-column: 1/4;
-            text-align: end;
-            margin-top: 12px;
-            color: rgb(131, 131, 131);
+        &-resultado{
+            
+            background-color: #00bfffa1;
+            padding-inline: 12px;
+            padding-block: 12px;
+            border-radius: 30px;
+        }
+
+        &-minutos{
+            background-color: #00bfffa1;
+            height: 50px;
+            width: 50px;
+            display: grid;
+            place-items: center;
+            padding: 12px 12px ;
+            border-radius: 30px;
+            position: relative;
+            font-weight: 700;
+        }
+        &-minutos::after{
+            content: 'min';
+            position: absolute;
+            background-color: rgb(54, 54, 54);
+            border-radius: 15px;
+            padding: 3px 5px;
+            left: 30px;
+            top: -10px;
+            font-size: 12px;
+            font-weight: 400;
             
         }
-        .local{
-            text-align: end;
-            font-size: 18px;
-            font-weight: 500;
-        }
 
-        .visitante{
-            font-size: 18px;
-            font-weight: 500;
-        }
 
-        .versus{
-            text-align: center;
-            font-size: 18px;
-            font-weight: 500;
-            grid-column: 2/3;
-            grid-row: 2/5;
-        }
-
-        .goles_local{
-            grid-row: 3/5;
-            grid-column: 1/2;
-            font-size: 48px;
-            text-align: end;
-        }
-
-        .goles_visitante{
-            grid-row: 3/5;
-            grid-column: 3/4;
-            font-size: 48px;
-            text-align: start;
-        }
-
-        .button{
-            background-color: black;
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            border-radius: 8px;
-            font-size: 14px;
-            transition: all .3s ease;
-            
-        }
-        .button:hover{
-            background-color: rgba(207, 207, 207, 0.759);
-            color: black;
-        }
-
-        .acciones{
-            grid-column: 3/4;
-        }
+        
     }
         
 }
