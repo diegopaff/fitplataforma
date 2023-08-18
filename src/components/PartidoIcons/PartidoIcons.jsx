@@ -1,5 +1,6 @@
 import './PartidoIcons.scss'
 
+
 const PartidoIcons = ({value, tipo}) => {
 
 
@@ -15,8 +16,9 @@ const PartidoIcons = ({value, tipo}) => {
     if(tipo == 'goles'){
         return (
         <div className='icon-container'>
-            <p className="icon__value">{value}</p>
-            <p className='icon__tipo'>{value > 1 ? 'goles' : 'gol'}</p>
+            
+            <p className={`icon__value ${ value > 0 ? "goles" : "inactivo"}`}>{value}</p>
+            <p className={`icon__tipo ${ value > 0 ? "" : "inactivo"}`}>{value == 1 ? 'gol' : 'goles'}</p>
         </div>
         )
     }
@@ -24,8 +26,8 @@ const PartidoIcons = ({value, tipo}) => {
     if(tipo == 'asistencias'){
         return (
         <div className='icon-container'>
-            <p className="icon__value">{value}</p>
-            <p className='icon__tipo'>asist.</p>
+            <p className={`icon__value ${ value > 0 ? "asistencias" : "inactivo"}`}>{value}</p>
+            <p className={`icon__tipo ${ value > 0 ? "" : "inactivo"}`}>asist.</p>
         </div>
         )
     }

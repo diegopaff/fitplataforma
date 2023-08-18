@@ -3,21 +3,37 @@
 .VideoPlay{
     background-color: $navbar_bg_dark;
     min-height: 100vh;
-    padding: 1rem;
-    padding-top: 2rem;
-    display: flex;
-    flex-direction: column;
+    padding: 5vh 0; 
 
-    &__player{
-        aspect-ratio: 16/9;
-        border: none;
-        width: 80%;
-    }
 
-    &__title{
-        color: white;
-        font-size: 1.2rem;
+
+
+    .page-container{
+        background-color: $pages_bg_light;
         
+        height: 90vh;
+        width: 95%;
+        border-radius: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding-left: 45px;
+        overflow-y: scroll;
+
+        .VideoPlay__player{
+            aspect-ratio: 16/9;
+            border-radius: 30px;
+            border: none;
+            width: 70%;
+        }
+
+        .VideoPlay_title{
+            margin-top: 12px;
+            color: $navbar_bg_dark;
+            font-size: 2rem;
+            
+
+        }
     }
     
 }

@@ -1,11 +1,15 @@
 .App-Container{
     background-color: #f3f4f6;
-    display: flex;
+    display: grid;
+    grid-template-columns: .1fr 1fr;
+    max-height: 97vh;
 
  
     .header{
-        display: flex;
-        flex-direction: column;
+        
+        height: 100%;
+        width: 250px;
+        
     }
 
     main{

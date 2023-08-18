@@ -6,23 +6,20 @@ import { TbSoccerField } from 'react-icons/tb';
 //import { GoGraph } from 'react-icons/go';
 import UserLogged from './UserLogged/UserLogged';
 import { userAuthContext } from '../../context/UserAuthContext';
-import { NavbarStateContext } from '../../context/NavbarStateContext';
+
 
 
 
 const Navbar = () => {
 
   const {logOut} = useContext(userAuthContext);
-  const {toggleActive, active } = useContext(NavbarStateContext)
+
   /* const [active, setActive] = useState(true);
   const toggleActive = () => setActive(!active); */
 
   return (
 
-    <nav className={`${active ? 'active' : ' '} sidebar`}>
-      <div className='toggleButton' onClick={toggleActive}>
-        {active ? <MdMenuOpen/> : <MdMenu/>}
-      </div>
+    <nav className='active sidebar'>
       
       {/* <NavLink to="/">   
         <img src={Logo} className="sidebar__logo" alt='FIT logo'></img>
@@ -32,22 +29,22 @@ const Navbar = () => {
 
       <ul className='nav'>
         <li>
-          <NavLink className={`li_content ${active ? 'open' : ' '}`} to="/">
+          <NavLink className='li_content open' to="/">
             <MdHomeFilled className='logo'/> 
-            <p >Inicio</p>
+            { open && <p>Inicio</p>}
             
           </NavLink>
         </li>
         <li>
-          <NavLink className={`li_content ${active ? 'open' : ' '}`} to="/charlas">
+          <NavLink className='li_content open' to="/charlas">
             <MdOutlineVideoLibrary className='logo'/> 
-            <p>Charlas Tácticas</p>
+            { open && <p>Charlas</p>}
           </NavLink>
         </li>
         <li>
-          <NavLink to="/partidos" className={`li_content ${active ? 'open' : ' '}`} >
+          <NavLink to="/partidos" className='li_content open' >
             <TbSoccerField className='logo'/>
-            <p>Partidos</p>
+            { open && <p>Partidos</p>}
           </NavLink>
         </li>
         <li>

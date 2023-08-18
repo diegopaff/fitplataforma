@@ -1,15 +1,34 @@
+@import '../../scss/variables';
+
+
 .icon-container{
     position: relative;
+
     .icon__value{
+        color: $navbar_text;
         background-color: #00bfffa1;
         height: 50px;
         width: 50px;
         display: grid;
         place-items: center;
-        padding: 12px 12px ;
         border-radius: 30px;
+        border: 2px solid $navbar_text;
         position: relative;
         font-weight: 700;
+    }
+
+    .icon__value.goles{
+        background-color: #99aa38c0;
+        
+    }
+
+    .icon__value.asistencias{
+        background-color: #525174bb;
+    }
+
+    .icon__value.inactivo{
+        background-color: grey;
+        opacity: 30%;
     }
     
     .icon__tipo{
@@ -22,4 +41,11 @@
         font-size: 12px;
         font-weight: 400;
     }
+
+    .icon__tipo.inactivo{
+        
+        background-color: grey;
+        opacity: 30%;
+    }
 }
+

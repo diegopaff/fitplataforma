@@ -12,6 +12,7 @@ const VideoPlay = ({tipo}) => {
     const {user} = useContext(userAuthContext); //usuario logueado
     const [partido, setPartido] = useState({});
     const {partidoID} = useParams();
+    console.log(partidoID)
     console.log(user)
     
     useEffect(() => {
@@ -30,12 +31,15 @@ const VideoPlay = ({tipo}) => {
    
   return (
     <div className='VideoPlay'>
-        <h2 className='section_title'> {tipo == 'partido' ? 'Partido Completo' : 'Acciones'}</h2>
-        <iframe className='VideoPlay__player' src={tipo == 'partido' ? partidoUrl : accionesUrl} allow="autoplay" allowFullScreen ></iframe>
+      <div className='page-container'>
 
-        <p className='VideoPlay__title'> {partido.local}  {partido.golesLocal}  vs  {partido.golesVisita}  {partido.visita}</p>
-        <p className='VideoPlay__title'> {partido.minutosJugados} minutos jugados.</p>
-        <NavLink to="/partidos"> <button> Volver</button></NavLink>
+          <h2 className='VideoPlay_title'> {tipo == 'partido' ? 'Partido Completo' : 'Acciones'}</h2>
+          <iframe className='VideoPlay__player' src={tipo == 'partido' ? partidoUrl : accionesUrl} allow="autoplay" allowFullScreen ></iframe>
+
+          <p className='VideoPlay__details'> {partido.local}  {partido.golesLocal}  vs  {partido.golesVisita}  {partido.visita}</p>
+          <p className='VideoPlay__details'> {partido.minutosJugados} minutos jugados.</p>
+          <NavLink to="/partidos"> <button> Volver</button></NavLink>
+      </div>
     </div>
   )
 };

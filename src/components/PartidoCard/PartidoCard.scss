@@ -2,8 +2,8 @@
 
 .PartidoCard{
     
-    width: 350px;
-    height: 258px;
+    width: 400px;
+    height: 300px;
     background: rgb(2,0,36);
     background: linear-gradient(-45deg, #181818 0%, #222222 20%, #262626 100%);
     border-radius: 30px;
@@ -17,32 +17,52 @@
     background-position: center;
 
     &:hover{
-        background-size: auto 107%;
-        cursor: pointer;
+        background-size: auto 103%;
+        
     }
 
 
     .partido__info{
-        
+        padding: 28px;
         height: 100%;
         font-size: 18px;
         font-weight: 400;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        justify-content: space-between;
         z-index: 3;
         background-color: rgba(0, 0, 0, 0.382);
-        transition: all .4s ease;
+        transition: all .8s ease;
         &:hover{
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: rgba(0, 0, 0, 0.189);
         
+        }
+
+        &-details{
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            
+
+            .icons{
+                display: flex; 
+                gap: 16px;
+            }
+
+            .date{
+                justify-self: end;
+                font-weight: 500;
+
+            }
         }
 
         &-resultado{
             
-            background-color: #00bfffa1;
-            padding-inline: 12px;
+            background-color: $partidoCard_detail;
+            font-weight: 600;
+            width: fit-content;
+            align-self: center;
+            padding-inline: 20px;
             padding-block: 12px;
             border-radius: 30px;
         }
@@ -72,6 +92,8 @@
         }
         .button_container{
             display: flex;
+            justify-content: space-evenly;
+            width: 100%;
             .button{
                 background-color: $FITcolor;
                 color:$pages_bg_light;
@@ -81,8 +103,13 @@
                 gap: 15px;
                 padding-inline: 15px;
                 padding-block: 10px;
-                border-radius: 30px;
+                border-radius: 20px;
+                transition: all 0.4s ease;
     
+            }
+            .button:hover{
+                background-color: #12ccff;
+                transform: scale(1.02);
             }
         }
 

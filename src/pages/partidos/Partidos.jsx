@@ -31,7 +31,7 @@ const Partidos = () => {
 
 
   return (
-    <div className={`partidos_container ${active ? 'active' : ' '}`}>
+    <div className='partidos_container'>
       
       <div className='page_container'> 
         <div className='section_title' >

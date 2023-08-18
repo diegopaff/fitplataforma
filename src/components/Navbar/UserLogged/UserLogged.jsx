@@ -27,7 +27,7 @@ const UserLogged = () => {
   
   
   return (
-    <div className='  '>
+    <div className='UserLogged open'>
       <div className='UserLogged__picture'>
         <img src={user.photoURL}></img>
       </div>

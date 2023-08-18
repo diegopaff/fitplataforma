@@ -27,10 +27,11 @@ function App() {
       {!user && <Login />}
       
       {user &&  
-        <header>
+        <header className='header'>
           <Navbar />  
         </header>
       }
+      
       {user &&
         <main>
             <Routes>
@@ -41,7 +42,7 @@ function App() {
               <Route exact path='/estadisticas' element={<EstadisticasPage />} />
               <Route exact path='/prensa' element={<Prensa />} />
               <Route exact path='/partidos/:partidoID' element={<VideoPlay tipo='partido'/>} />
-              <Route exact path='/acciones/:partidoID' element={<VideoPlay tipo='acciones'/>} /> 
+              <Route exact path='/partidos/acciones/:partidoID' element={<VideoPlay tipo='acciones'/>} /> 
             </Routes>
         </main>
       }
