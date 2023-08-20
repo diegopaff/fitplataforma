@@ -4,13 +4,13 @@ import './Partidos.scss'
 import { collection, getDocs} from "firebase/firestore";
 import { useEffect, useState, useContext} from 'react';
 import { userAuthContext } from '../../context/UserAuthContext';
-import { NavbarStateContext } from '../../context/NavbarStateContext';
+
 
 
 const Partidos = () => {
   const [matches, setMatches] = useState([]);
   const {user} = useContext(userAuthContext); //usuario logueado
-  const {active} = useContext(NavbarStateContext); //Navbar abierta o cerrada
+
 
   
   useEffect(() => {
@@ -29,7 +29,7 @@ const Partidos = () => {
     })();
   }, []);
 
-
+  console.log(matches)
   return (
     <div className='partidos_container'>
       

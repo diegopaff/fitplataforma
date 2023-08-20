@@ -1,8 +1,9 @@
 import './Navbar.scss';
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import { MdOutlineVideoLibrary,  MdLogout, MdHomeFilled, MdMenu, MdMenuOpen} from 'react-icons/md';
+import { MdOutlineVideoLibrary,  MdLogout, MdHomeFilled} from 'react-icons/md';
 import { TbSoccerField } from 'react-icons/tb';
+import Logo from '../../assets/logoFIT.png'
 //import { GoGraph } from 'react-icons/go';
 import UserLogged from './UserLogged/UserLogged';
 import { userAuthContext } from '../../context/UserAuthContext';
@@ -14,16 +15,14 @@ const Navbar = () => {
 
   const {logOut} = useContext(userAuthContext);
 
-  /* const [active, setActive] = useState(true);
-  const toggleActive = () => setActive(!active); */
 
   return (
 
     <nav className='active sidebar'>
       
-      {/* <NavLink to="/">   
+      <NavLink to="/">   
         <img src={Logo} className="sidebar__logo" alt='FIT logo'></img>
-      </NavLink> */}
+      </NavLink>
       
       <UserLogged />
 
@@ -66,7 +65,7 @@ const Navbar = () => {
       
       <div onClick={logOut} className='logOut' >
             <MdLogout />
-            <p>LogOut</p>
+            <p>Salir</p>
       </div>
     </nav>
   );
