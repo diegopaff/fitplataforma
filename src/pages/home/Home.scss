@@ -1,7 +1,35 @@
 @import '../../scss/variables';
 
 .home-container{
-    background-color: blueviolet;
-    width: 100%px;
+    background-color: $navbar_bg_dark;
+    padding: 5vh 0; 
+    height:100vh;
+
+    .section_title h1{
+        font-size: 35px;
+        font-weight: 700;
+        color: $navbar_bg_dark; 
+    }
+
+    .page-container{
+        background-color: $pages_bg_light;
+        height: 90vh;
+        width: 95%;
+        border-radius: 40px;
+        display: flex;
+        gap: 1rem ;
+        flex-direction: column;
+        padding: 45px;
+        overflow-y: scroll;
+       
+
+        .stats-container{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+
+    }
     
 }

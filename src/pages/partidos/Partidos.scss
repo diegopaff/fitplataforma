@@ -1,6 +1,6 @@
 @import '../../scss/variables';
 
-.partidos_container{
+.partidos-container{
     
     background-color: $navbar_bg_dark;
     padding: 5vh 0; 
@@ -16,7 +16,7 @@
         
     }
 
-    .page_container{
+    .page-container{
         background-color: $pages_bg_light;
         height: 90vh;
         width: 95%;
@@ -28,7 +28,7 @@
         overflow-y: scroll;
        
 
-        .cards_container{
+        .cards-container{
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
@@ -39,11 +39,7 @@
     
     
 }
-.section_title h1{
-    font-size: 35px;
-    font-weight: 700;
-    color: white;
-}
+
 
 
 

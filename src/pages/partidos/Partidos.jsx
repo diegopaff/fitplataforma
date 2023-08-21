@@ -27,17 +27,17 @@ const Partidos = () => {
       
 
     })();
-  }, []);
+  }, [user.uid]);
 
   console.log(matches)
   return (
-    <div className='partidos_container'>
+    <div className='partidos-container'>
       
-      <div className='page_container'> 
+      <div className='page-container'> 
         <div className='section_title' >
           <h1>Partidos</h1>
         </div>
-        <div className='cards_container'>
+        <div className='cards-container'>
 
           {matches.map((part)=> (
             

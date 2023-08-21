@@ -22,30 +22,62 @@ export const useStats = ()=> {
       
 
     })();
-  }, []);
+  }, [user.uid]);
 
   const getSumAll = (propiedad) => {
+
     const total = matchesStats.reduce((accumulator, object) => {
-      
       return accumulator + object[propiedad];
     }, 0);
 
-      return total
-    }
-  
-
-
-/*   function calculateSum(array, property) {
-    const total = array.reduce((accumulator, object) => {
-      return accumulator + object[property];
+    const ganados = matchesStats.reduce((accumulator, object) => {
+      return accumulator + object[`${propiedad}Ganados`];
     }, 0);
-  
-    return total;
-  } */
+   
+      return {total: total, ganados: ganados}
+  }
 
+  const getNameItem = (propiedad) => {
+    switch(propiedad){
+      case 'duelosDefensivos' :
+       return 'Duelos defensivos'
+      case 'duelosOfensivos' :
+        return 'Duelos ofensivos'
+      case 'duelosAereos' :
+        return 'Duelos aéreos'
+      case 'pasesLaterales' :
+        return 'Pases laterales'
+      case 'pasesProgresivos':
+        return 'Pases progresivos'
+      case 'pasesHaciaAtras' :
+        return 'Pases hacia atrás'
+      case 'minutosJugados' :
+        return 'Minutos jugados'
+      
+    } 
+  }
+
+  const getArrayItems = [
+    'duelosDefensivos',
+    'goles',
+    'asistencias',
+    'remates',
+    'duelosOfensivos',
+    'regate',
+    'dueloAereo',
+    'pasesLaterales',
+    'pasesProgresivos',
+    'pasesHaciaAtras'
+
+  ]
+
+
+  
   return {
     matchesStats,
-    getSumAll
+    getSumAll,
+    getNameItem,
+    getArrayItems
     
 }
 
