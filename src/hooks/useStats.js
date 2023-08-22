@@ -53,14 +53,21 @@ export const useStats = ()=> {
         return 'Pases hacia atrás'
       case 'minutosJugados' :
         return 'Minutos jugados'
+      default :
+        return propiedad.charAt(0).toUpperCase() + propiedad.slice(1);
       
-    } 
+    }
+  }
+  
+  const getSumSingle = (propiedad) => {
+    const total = matchesStats.reduce((accumulator, object) => {
+      return accumulator + object[propiedad];
+    }, 0);
+    return total
   }
 
   const getArrayItems = [
     'duelosDefensivos',
-    'goles',
-    'asistencias',
     'remates',
     'duelosOfensivos',
     'regate',
@@ -68,7 +75,6 @@ export const useStats = ()=> {
     'pasesLaterales',
     'pasesProgresivos',
     'pasesHaciaAtras'
-
   ]
 
 
@@ -77,7 +83,8 @@ export const useStats = ()=> {
     matchesStats,
     getSumAll,
     getNameItem,
-    getArrayItems
+    getArrayItems,
+    getSumSingle
     
 }
 

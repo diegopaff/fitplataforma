@@ -1,13 +1,11 @@
 import './Home.scss'
 
 import StatsCard from '../../components/Statscard/StatsCard';
-/* import db from '../../../utilities/firebase'
-import { collection, getDocs} from "firebase/firestore";
-import { useEffect, useState, useContext} from 'react';
-import { userAuthContext } from '../../context/UserAuthContext'; */
 
+import StatsCardSingle from '../../components/Statscard/StatsCardSingle';
 const Home = () => {
 
+  
   return (
     <div className='home-container'>
       <div className='page-container'>
@@ -16,9 +14,25 @@ const Home = () => {
           <h1>Estadísticas 2023</h1>
         </div>
         <div className='stats-container'>
-          <StatsCard 
-            tipo={'duelosDefensivos'}
-           />
+          <div className='single-container'>
+            <StatsCardSingle tipo={'goles'} />
+            <StatsCardSingle tipo={'asistencias'} />
+          </div>
+          <div className='ofensivo-container'>
+            <StatsCard tipo={'remates'} />
+            <StatsCard tipo={'duelosOfensivos'} />
+            <StatsCard tipo={'regates'} />
+            <StatsCard tipo={'duelosAereos'} />
+            
+
+          </div>
+          <div className='defensivo-container'>
+            <StatsCard tipo={'duelosDefensivos'} />
+          </div>
+           
+           
+           
+
         </div>
       </div>
         

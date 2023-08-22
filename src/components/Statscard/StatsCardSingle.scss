@@ -1,0 +1,29 @@
+@import '../../scss/variables';
+
+
+.StatsCardSingle-container{
+    width: 200px;
+    position: relative;
+    height: 200px;
+    padding: 15px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 4px 2px 11px -5px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s ease;
+    
+    &:hover{
+        transform: scale(1.05);
+    }
+
+    .StatsCardSingle__title{
+        color: $navbar_bg_dark;
+        font-size: 22px;
+    }
+
+    .StatsCardSingle__ganados{
+        color: $FITcolor;
+        font-size: 64px;
+        font-weight: 700;
+    }
+
+}
