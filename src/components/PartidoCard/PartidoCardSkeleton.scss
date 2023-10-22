@@ -1,0 +1,41 @@
+
+.PartidoCardSkeleton {
+ 
+    background-image: linear-gradient(0deg, rgb(171, 171, 171), rgb(171, 171, 171) 100%);
+    width: 400px;
+    height: 300px;
+    border-radius: 30px;
+    overflow: hidden;
+    animation-name: parpadeo;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+
+    .partido__info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &-details{
+            height: 100px;
+            width: 100%;
+
+            .icons{
+
+                .spanCircle{
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    background-image: linear-gradient(0deg, rgb(98, 98, 98) 0%, rgb(122, 122, 122) 100%);
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes parpadeo {
+    0%   {opacity: 0.8;}
+    50%  {opacity: 0.5;}
+    100%  {opacity: 0.8;}
+  }

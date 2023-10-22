@@ -1,6 +1,6 @@
 import './PartidoCard.scss';
 import PropTypes from 'prop-types';
-import { GiSoccerKick, GiSoccerField, GiPlayButton } from 'react-icons/gi';
+import { GiSoccerKick, GiSoccerField } from 'react-icons/gi';
 import { NavLink } from 'react-router-dom';
 import PartidoIcons from '../PartidoIcons/PartidoIcons';
 

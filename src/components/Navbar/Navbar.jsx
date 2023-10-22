@@ -1,7 +1,7 @@
 import './Navbar.scss';
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import { MdOutlineVideoLibrary,  MdLogout, MdHomeFilled} from 'react-icons/md';
+import { /* MdOutlineVideoLibrary */  MdLogout, MdHomeFilled} from 'react-icons/md';
 import { TbSoccerField } from 'react-icons/tb';
 import Logo from '../../assets/logoFIT.png'
 //import { GoGraph } from 'react-icons/go';
@@ -34,12 +34,12 @@ const Navbar = () => {
             
           </NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink className='li_content open' to="/charlas">
             <MdOutlineVideoLibrary className='logo'/> 
             { open && <p>Charlas</p>}
           </NavLink>
-        </li>
+        </li> */}
         <li>
           <NavLink to="/partidos" className='li_content open' >
             <TbSoccerField className='logo'/>
