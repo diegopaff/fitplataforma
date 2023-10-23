@@ -12,8 +12,6 @@ const VideoPlay = ({tipo}) => {
     const {user} = useContext(userAuthContext); //usuario logueado
     const [partido, setPartido] = useState({});
     const {partidoID} = useParams();
-    console.log(partidoID)
-    console.log(user)
     
     useEffect(() => {
         const itemRef = doc(db, user.uid, '2023', 'partidos', partidoID);
@@ -22,7 +20,7 @@ const VideoPlay = ({tipo}) => {
             setPartido({ id: snapshot.id, ...snapshot.data() });
           }
         });
-      }, [partidoID, user.uid]);
+      }, [partidoID]);
 
     const partidoUrl = partido.partido;
     const accionesUrl = partido.acciones;

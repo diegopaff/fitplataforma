@@ -1,34 +1,18 @@
-import db from '../../../utilities/firebase'
+//import db from '../../../utilities/firebase'
 import PartidoCard from '../../components/PartidoCard/PartidoCard';
 import './Partidos.scss'
-import { collection, getDocs} from "firebase/firestore";
-import { useEffect, useState, useContext} from 'react';
-import { userAuthContext } from '../../context/UserAuthContext';
+//import { collection, getDocs} from "firebase/firestore";
+//import { useEffect, useState, useContext} from 'react';
+//import { userAuthContext } from '../../context/UserAuthContext';
 import PartidoCardSkeleton from '../../components/PartidoCard/PartidoCardSkeleton';
+import { useGetPartidos } from '../../hooks/useGetPartidos';
 
 
 
 const Partidos = () => {
-  const [matches, setMatches] = useState([]);
-  const {user} = useContext(userAuthContext); //usuario logueado
-  const skeletons = new Array('hola','perro','como','estas','gracias');
-  console.log(skeletons)
-  
-  useEffect(() => {
-    (async () => {
-      const collectionRef = collection(db, user.uid, '2023', 'partidos');
-    
-      const snapshots = await getDocs(collectionRef);
-      const docs = snapshots.docs.map((doc)  => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      
-      setMatches(docs);
-      
 
-    })();
-  }, [user.uid]);
+  const matches = useGetPartidos();
+  const skeletons = new Array('hola','perro','como','estas','gracias');
 
   return (
     
