@@ -3,10 +3,12 @@ import { collection, getDocs} from "firebase/firestore";
 import { useEffect, useState, useContext} from 'react';
 import { userAuthContext } from '../context/UserAuthContext';
 
-export const useStats = ()=> {
 
+
+export const useStats = ()=> {
+  const {user} = useContext(userAuthContext);
   const [matchesStats, setMatchesStats] = useState([]);
-  const {user} = useContext(userAuthContext); //usuario logueado
+   //usuario logueado
 
   useEffect(() => {
     (async () => {
