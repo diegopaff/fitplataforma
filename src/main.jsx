@@ -3,16 +3,16 @@ import App from './App.jsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import { UserAuthContextProvider } from './context/UserAuthContext.jsx'
-import { NavbarStateContextProvider } from './context/NavbarStateContext.jsx'
+import { UserDataContextProvider } from './context/UserDataContext.jsx'
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <UserAuthContextProvider>
-    <NavbarStateContextProvider>
+    <UserDataContextProvider>
       <BrowserRouter>
         <App />
       </BrowserRouter>,
-    </NavbarStateContextProvider>,
+    </UserDataContextProvider>,
   </UserAuthContextProvider>,
 )
