@@ -26,7 +26,7 @@ export const useGetStats = ()=> {
   
             })();
         }
-    }, [matchesStats]);
+    });
 
     
     return matchesStats

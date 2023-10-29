@@ -5,35 +5,38 @@
     min-height: 100vh;
     padding: 5vh 0; 
 
+    .video-container{
 
-
-
-    .page-container{
-        background-color: $pages_bg_light;
-        
-        height: 90vh;
-        width: 95%;
-        border-radius: 40px;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        padding-left: 45px;
-        overflow-y: scroll;
-
-        .VideoPlay__player{
-            aspect-ratio: 16/9;
-            border-radius: 30px;
-            border: none;
-            width: 70%;
-        }
-
-        .VideoPlay_title{
-            margin-top: 12px;
-            color: $navbar_bg_dark;
-            font-size: 2rem;
-            
-
+        .left{
+            background-color: $pages_bg_light;
+            height: 90vh;
+            width: 95%;
+            border-radius: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding-left: 45px;
+            overflow-y: scroll;
+    
+            .VideoPlay__player{
+                aspect-ratio: 16/9;
+                border-radius: 30px;
+                border: none;
+                width: 70%;
+            }
+    
+            .VideoPlay_title{
+                margin-top: 12px;
+                color: $navbar_bg_dark;
+                font-size: 2rem;
+                
+    
+            }
         }
     }
+
+    .stats-container{
+        
+    }   
     
 }

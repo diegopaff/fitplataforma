@@ -5,7 +5,7 @@ export const useStats = ()=> {
 
     const matchesStats = useGetStats();// import data from data context
   
-
+    
     const getSumAll = (propiedad) => {
         const total = matchesStats.reduce((accumulator, object) => {
             return accumulator + object[propiedad];
@@ -65,7 +65,7 @@ export const useStats = ()=> {
         getSumAll,
         getNameItem,
         getArrayItems,
-        getSumSingle
+        getSumSingle,
         
     }
 
